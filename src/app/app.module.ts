@@ -39,7 +39,10 @@ export function jwtOptionsFactory(storage: any) {
       },
     }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
